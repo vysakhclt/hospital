@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	  <div id="doctors" class="parallax section db" data-stellar-background-ratio="0.4" style="background:#fff; padding-top: 200px;" data-scroll-id="doctors" tabindex="-1">
+        <div class="container">
+
+		<div class="heading">
+               <span class="icon-logo"><img src="{% static 'images/icon-logo.png' %}" alt="#"></span>
+               <h2>Our Specialist </h2>
+            </div>
+        {% for i in doctor_list %}
+            <div class="row dev-list text-center">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn;">
+                    <div class="widget clearfix">
+                       <a href="{% url 'hospital_index_app:details' i.id %}" ><img src="{{i.photo.url}}" alt="" class="img-responsive img-rounded"></a>
+                        <div class="widget-title">
+                            <h3>{{ i.name }}</h3>
+                            <small>{{ i.qualification }}</small>
+                        </div>
+                        <!-- end title -->
+                        <p>{{i.detail}}</p>
+                        <div class="footer-social">
+                            <a  class="btn grd1"><i class="fa fa-facebook"></i></a>
+                            <a  class="btn grd1"><i class="fa fa-github"></i></a>
+                            <a class="btn grd1"><i class="fa fa-twitter"></i></a>
+                            <a  class="btn grd1"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div><!--widget -->
+                </div><!-- end col -->
+                {% endfor %}
+            </div>
+        </div>
+      </div>
+{%endblock%}

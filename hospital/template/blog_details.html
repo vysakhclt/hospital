@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="container" style="padding-top: 200px;">
+        <br>
+        <br>
+         <div class="heading">
+            <h2>Hospital Blog</h2>
+         </div>
+            <div class="row">
+               <div class="col-md-6">
+                  <div class="message-box">
+                     <h4>{{Blogs.name}}</h4>
+                     <p class="lead">{{Blogs.text}}</p>
+                  </div>
+                  <!-- end messagebox -->
+               </div>
+               <!-- end col -->
+               <div class="col-md-6">
+                  <div class="post-media wow fadeIn">
+                     <img src="{{Blogs.image.url}}" alt="" class="img-responsive">
+                  </div>
+                  <!-- end media -->
+               </div>
+               <!-- end col -->
+            </div>
+
+      </div>
+<!--new-->
+
+
+{%endblock%}

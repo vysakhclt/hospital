@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container" style="padding-top: 200px;" xmlns="http://www.w3.org/1999/html">
+  <div class="row">
+       <span class="info-icon"><i class="fa fa-hospital-o" aria-hidden="true"></i></span>
+    <div class="col-md-12">
+      <div class="logo padding">
+          <p><b>Life Care</b> is a NABH accredited 950-bed super-speciality hospital located in Kozhikode, India. It is located on Mini Bypass Road, Opp Kovilakam Residency Govindapuram, Kozhikode, Kerala, India. Life Care, an NABH accredited hospital, is established with the aim to offer advanced medical treatment of international standards at affordable rates.</p>
+      </div>
+        <h2>Token Numbers</h2>
+        {% for i in Booking_view %}
+        <h4>Name:<b>{{i.patient_name}}</b> -- Token Number:<b>{{i.id}}</b><br></h4>
+        {% endfor %}
+        <a href="/" style="color:blue">Back to Home</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

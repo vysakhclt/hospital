@@ -1,0 +1,38 @@
+{% load static %}
+
+<header>
+         <div class="header-top wow fadeIn" >
+            <div class="container">
+               <a class="navbar-brand" href="index"><img src="{% static 'images/logo.png' %}" alt="image"></a>
+
+                <div class="header-bottom wow fadeIn">
+                    <div class="container">
+                        <nav class="main-menu">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i class="fa fa-bars" aria-hidden="true"></i></button>
+                        </div>
+
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a class="active" href="/">Home</a></li>
+                                <li><a data-scroll href="{% url 'hospital_index_app:about' %}">About us</a></li>
+                                <li><a data-scroll href="{% url 'hospital_index_app:services' %}">Services</a></li>
+                                <li><a data-scroll href="{% url 'hospital_index_app:doctors_list' %}">Doctors</a></li>
+                                {% if user.is_authenticated %}
+                                <li><a data-scroll href="{% url 'hospital_index_app:confirm' %}">Make Appointment</a></li>
+                                <li><a data-scroll href="{% url 'hospital_index_app:logout' %}">Logout</a></li>
+                                {% else %}
+						        <li><a data-scroll href="{% url 'hospital_index_app:Register' %}">Register</a></li>
+                                <li><a data-scroll href="{% url 'hospital_index_app:login' %}">Login</a></li>
+                                {% endif %}
+                                {% if user.is_authenticated %}
+                                <li><a class="active">Hello<b>"{{user.username}}"</b></a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        </nav>
+                    </div>
+                 </div>
+            </div>
+         </div>
+</header>

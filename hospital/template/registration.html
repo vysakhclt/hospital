@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+      <div id="about" class="section wow fadeIn" style="padding-top: 200px;">
+         <div class="container">
+            <div class="col-lg-4 col-md-8 col-sm-12 col-xs-12">
+                  <div class="appointment-form">
+                     <h3><span>+</span> Registration</h3>
+                     <div class="form" >
+                        <form action=" " method="post">
+                           {% csrf_token %}
+                           <fieldset>
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                 <div class="row">
+                                    <div class="form-group">
+                                       <input type="text" name="first_name" placeholder="first Name"  />
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                 <div class="row">
+                                    <div class="form-group">
+                                       <input type="text" name="last_name" placeholder="last Name"  />
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                 <div class="row">
+                                    <div class="form-group">
+                                       <input type="email" placeholder="Email Address" name="email" />
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                 <div class="row">
+                                    <div class="form-group">
+                                       <input type="text" name="username" placeholder="userName"  />
+                                    </div>
+                                 </div>
+                              </div>
+<!--                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">-->
+<!--                                 <div class="row">-->
+<!--                                    <div class="form-group">-->
+<!--                                       <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required placeholder="Phone number">-->
+<!--                                        <small>Format: 123-456-7890</small>-->
+<!--                                    </div>-->
+<!--                                 </div>-->
+<!--                              </div>-->
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                 <div class="row">
+                                    <div class="form-group">
+                                       <input type="password" placeholder="Password" name="password1" />
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                 <div class="row">
+                                    <div class="form-group">
+                                       <input type="password" placeholder="confirm Password" name="password2" />
+                                    </div>
+                                 </div>
+                              </div>
+
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                 <div class="row">
+                                    <div class="form-group">
+                                       <div class="center"><input type="submit"></div>
+                                    </div>
+                                 </div>
+                              </div>
+
+                           </fieldset>
+                        </form>
+                     </div>
+                        {% for msg in messages %}
+                        {{ msg }}
+                        {% endfor %}
+                  </div>
+               </div>
+    </div>
+</div>
+{% endblock %}

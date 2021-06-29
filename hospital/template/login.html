@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div id="about" class="section wow fadeIn" style="padding-top: 200px;">
+<div class="container">
+<div class="col-lg-4 col-md-8 col-sm-6 col-xs-12">
+  <div class="appointment-form">
+    <h3><span>+</span> Login </h3>
+    <div class="form">
+      <form action="" method="post">
+        {% csrf_token %}
+        <fieldset>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="row">
+              <div class="form-group">
+                <input type="text" placeholder="username" name="username" />
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="row">
+              <div class="form-group">
+                <input type="password" name="password" placeholder="password" />
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+            <div class="row">
+              <div class="form-group">
+                <div ><input type="submit"/></div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    {% for msg in messages %}
+   {{ msg }}
+   {% endfor %}
+  </div>
+</div>
+</div>
+</div>
+{% endblock %}
